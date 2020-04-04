@@ -22,7 +22,7 @@ class AddDeck extends Component{
 		// Redux update
 		this.props.dispatch(addDeck({decks:{[newdeck]:empty}}))
 		//redirectaso
-		return this.props.navigation.navigate('Decks')
+		return this.props.navigation.navigate('SingleDeck', {deckId:newdeck,cardCount:0})
 	}
 	render(){
 		return(

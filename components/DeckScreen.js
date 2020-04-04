@@ -16,7 +16,7 @@ class DeckScreen extends Component{
 					data={this.props.allDecks} 
 					renderItem={({item})=>
 						<View
-						key={item.deck}
+						//key={item.deck}
 						style={{backgroundColor:'#2196F3',alignItems:'center',width:300,borderWidth:2,padding:4,margin:10}}>
 							<TouchableOpacity onPress={() => this.props.navigation.navigate('SingleDeck', {deckId:item.deck,cardCount:item.count})}>
 						      	<Text style={{color:'white',fontWeight:'bold'}}>{item.deck}</Text>
@@ -24,6 +24,7 @@ class DeckScreen extends Component{
 					    	</TouchableOpacity>
 					    </View>
 					}
+					keyExtractor={item=> item.deck}
 				/>
 			</View>
 			)
